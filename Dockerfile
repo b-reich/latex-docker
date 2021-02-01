@@ -1,4 +1,4 @@
-From: ubuntu:latest
+FROM ubuntu:latest
 
 RUN apt-get update -q && apt-get upgrade -qy && apt-get install -qy \
     texlive-full \

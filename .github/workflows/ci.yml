@@ -5,7 +5,7 @@ on:
     branches: main
 
 jobs:
-  dockerhub:
+  build-docker-image:
     runs-on: ubuntu-latest
     steps:
       -
@@ -33,6 +33,12 @@ jobs:
       -
         name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
+  
+  push-docker-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - 
+        uses: actions/checkout@v2
       -
         name: Update repo description
         uses: peter-evans/dockerhub-description@v2

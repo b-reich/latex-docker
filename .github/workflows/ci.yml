@@ -38,7 +38,7 @@ jobs:
           push: true
           tags: |
             chillfre4k/latex:latest
-            ghcr.io/b-reich/latex:latest
+            ghcr.io/b-reich/latex-docker:latest
           cache-from: type=registry,ref=chillfre4k/latex:latest
           cache-to: type=inline
       -

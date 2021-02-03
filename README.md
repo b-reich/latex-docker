@@ -8,10 +8,22 @@ You can also use this in your CI/CD.
 
 Feel free to create a Issue or PR.
 
-
-## Usage:
+## Usage
 ```
 docker pull chillfre4k/latex
 
 exec docker run --rm -i --user="$(id -u):$(id -g)" --net=none -v "$PWD":/data "chillfre4k/latex pdflatex main.tex
+```
+
+## Examples
+### Gitlab-CI
+```yaml
+image: chillfre4k/latex:latest
+
+build:
+  script:
+    - pdflatex thesis.tex
+  artifacts:
+    paths:
+      - "*.pdf"
 ```

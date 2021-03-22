@@ -29,20 +29,55 @@ jobs:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.CR_PAT }}
-      -      
-        name: Build and push
-        id: docker_build
+      -
+        name: Build and push amd64
+        id: docker_build_amd64
         uses: docker/build-push-action@v2
         with:
-          #linux/arm/v7,linux/arm64,
           platforms: linux/amd64 
           push: true
           tags: |
             chillfre4k/latex:latest
             ghcr.io/b-reich/latex:latest
           cache-from: type=registry,ref=chillfre4k/latex:latest
-          #cache-to: type=inline
+          cache-to: type=inline
       -
+        name: Build and push arm64
+        id: docker_build_arm64
+        uses: docker/build-push-action@v2
+        with:
+          platforms: linux/arm64 
+          push: true
+          tags: |
+            chillfre4k/latex:latest
+            ghcr.io/b-reich/latex:latest
+          cache-from: type=registry,ref=chillfre4k/latex:latest
+          cache-to: type=inline
+      -
+        name: Build and push armv6
+        id: docker_build_armv6
+        uses: docker/build-push-action@v2
+        with:
+          platforms: linux/arm/v6
+          push: true
+          tags: |
+            chillfre4k/latex:latest
+            ghcr.io/b-reich/latex:latest
+          cache-from: type=registry,ref=chillfre4k/latex:latest
+          cache-to: type=inline
+      -
+        name: Build and push armv7
+        id: docker_build_armv7
+        uses: docker/build-push-action@v2
+        with:
+          platforms: linux/arm/v7 
+          push: true
+          tags: |
+            chillfre4k/latex:latest
+            ghcr.io/b-reich/latex:latest
+          cache-from: type=registry,ref=chillfre4k/latex:latest
+          cache-to: type=inline
+      - 
         name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
   

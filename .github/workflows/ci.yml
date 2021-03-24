@@ -38,7 +38,7 @@ jobs:
           push: true
           tags: |
             chillfre4k/latex:latest
-            ghcr.io/b-reich/latex:latest
+          #  ghcr.io/b-reich/latex:latest
           #cache-from: type=registry,ref=chillfre4k/latex:latest
           #cache-to: type=inline
       -
@@ -50,7 +50,7 @@ jobs:
           push: true
           tags: |
             chillfre4k/latex:latest
-            ghcr.io/b-reich/latex:latest
+          #  ghcr.io/b-reich/latex:latest
           #cache-from: type=registry,ref=chillfre4k/latex:latest
           #cache-to: type=inline
       -
@@ -62,7 +62,7 @@ jobs:
           push: true
           tags: |
             chillfre4k/latex:latest
-            ghcr.io/b-reich/latex:latest
+          #  ghcr.io/b-reich/latex:latest
           #cache-from: type=registry,ref=chillfre4k/latex:latest
           #cache-to: type=inline
       - 

@@ -54,18 +54,6 @@ jobs:
           #cache-from: type=registry,ref=chillfre4k/latex:latest
           #cache-to: type=inline
       -
-        name: Build and push armv6
-        id: docker_build_armv6
-        uses: docker/build-push-action@v2
-        with:
-          platforms: linux/arm/v6
-          push: true
-          tags: |
-            chillfre4k/latex:latest
-            ghcr.io/b-reich/latex:latest
-          #cache-from: type=registry,ref=chillfre4k/latex:latest
-          #cache-to: type=inline
-      -
         name: Build and push armv7
         id: docker_build_armv7
         uses: docker/build-push-action@v2

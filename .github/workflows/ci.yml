@@ -39,8 +39,8 @@ jobs:
           tags: |
             chillfre4k/latex:latest
             ghcr.io/b-reich/latex:latest
-          cache-from: type=registry,ref=chillfre4k/latex:latest
-          cache-to: type=inline
+          #cache-from: type=registry,ref=chillfre4k/latex:latest
+          #cache-to: type=inline
       -
         name: Build and push arm64
         id: docker_build_arm64
@@ -51,8 +51,8 @@ jobs:
           tags: |
             chillfre4k/latex:latest
             ghcr.io/b-reich/latex:latest
-          cache-from: type=registry,ref=chillfre4k/latex:latest
-          cache-to: type=inline
+          #cache-from: type=registry,ref=chillfre4k/latex:latest
+          #cache-to: type=inline
       -
         name: Build and push armv6
         id: docker_build_armv6
@@ -75,8 +75,8 @@ jobs:
           tags: |
             chillfre4k/latex:latest
             ghcr.io/b-reich/latex:latest
-          cache-from: type=registry,ref=chillfre4k/latex:latest
-          cache-to: type=inline
+          #cache-from: type=registry,ref=chillfre4k/latex:latest
+          #cache-to: type=inline
       - 
         name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}

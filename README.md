@@ -13,7 +13,7 @@ Feel free to create a Issue or PR.
 
 ## Usage
 ```shell
-docker pull chillfre4k/latex
+docker pull docker.io/chillfre4k/latex
 
 exec docker run --rm -i --user="$(id -u):$(id -g)" --net=none -v "$PWD":"/data" chillfre4k/latex pdflatex main.tex
 ```
@@ -21,7 +21,7 @@ exec docker run --rm -i --user="$(id -u):$(id -g)" --net=none -v "$PWD":"/data" 
 ## Examples
 ### Gitlab-CI
 ```yaml
-image: chillfre4k/latex:latest
+image: docker.io/chillfre4k/latex:latest
 
 build:
   script:

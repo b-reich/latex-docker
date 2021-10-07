@@ -1,11 +1,16 @@
 FROM ubuntu:latest
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt-get update -q && apt-get upgrade -qy && apt-get install -qy \
+RUN apt-get update -q \
+    && apt-get upgrade -qy \
+    && apt-get install -qy \
+    git \
+    gnuplot-nox \
+    make \
+    python-pygments \
     texlive-full \
-    python-pygments gnuplot-nox \
-    make git \
-    && rm -rf /var/lib/apt/lists/*
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* /var/cache/* /var/log/*
 
 WORKDIR /data
 VOLUME ["/data"]

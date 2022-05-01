@@ -7,7 +7,7 @@ RUN apt-get update -q \
     git \
     gnuplot-nox \
     make \
-    python-pygments \
+    python3-pygments \
     texlive-full \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /var/cache/* /var/log/*
